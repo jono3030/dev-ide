@@ -39,7 +39,7 @@ WORKDIR /home/$USERNAME
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Set up NVChad (default config, untouched)
-RUN git clone https://github.com/NvChad/starter ~/.config/nvim
+RUN git clone https://github.com/NvChad/starter /home/$USERNAME/.config/nvim
 
 # Configure git if build args are provided
 RUN <<EOF
