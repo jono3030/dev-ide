@@ -1,0 +1,25 @@
+services:
+  nvchad:
+    container_name: dev_ide
+    build:
+      context: .
+      target: python-dev
+      args:
+        USERNAME: ${USERNAME}
+        USER_UID: ${USER_UID}
+        USER_GID: ${USER_GID}
+        GIT_AUTHOR_EMAIL: ${GIT_AUTHOR_EMAIL}
+        GIT_AUTHOR_NAME: ${GIT_AUTHOR_NAME}
+    image: dev_ide_img
+    environment:
+      - HOME=/home/${USERNAME}
+    user: "${USER_UID}:${USER_GID}"
+    working_dir: /home/${USERNAME}
+    tty: true
+    volumes:
+      # Mount only the custom NVChad plugins (from host to container)
+      - ~/.config/nvim/lua/mappings.lua:/home/${USERNAME}/.config/nvim/lua/mappings.lua:ro
+      - ~/.config/nvim/lua/options.lua:/home/${USERNAME}/.config/nvim/lua/options.lua:ro
+      - ~/.config/nvim/lua/plugins:/home/${USERNAME}/.config/nvim/lua/plugins:ro
+      - ~/.config/nvim/lua/configs:/home/${USERNAME}/.config/nvim/lua/configs:ro
+      - ~/.config/zsh/.zshrc:/home/${USERNAME}/.zshrc:ro

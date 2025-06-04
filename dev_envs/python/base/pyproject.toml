@@ -1,0 +1,10 @@
+[project]
+name = "base-python"
+version = "0.1.0"
+description = "Base image for Python development with Neovim"
+requires-python = ">=3.12"
+
+dependencies = [
+    "ruff",
+    "pyright"
+]
