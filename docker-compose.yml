@@ -18,8 +18,8 @@ services:
     tty: true
     volumes:
       # Mount only the custom NVChad plugins (from host to container)
-      - ~/.config/nvim/lua/mappings.lua:/home/${USERNAME}/.config/nvim/lua/mappings.lua:ro
-      - ~/.config/nvim/lua/options.lua:/home/${USERNAME}/.config/nvim/lua/options.lua:ro
-      - ~/.config/nvim/lua/plugins:/home/${USERNAME}/.config/nvim/lua/plugins:ro
-      - ~/.config/nvim/lua/configs:/home/${USERNAME}/.config/nvim/lua/configs:ro
-      - ~/.config/zsh/.zshrc:/home/${USERNAME}/.zshrc:ro
+      - /home/${USERNAME}/.config/nvim/lua/mappings.lua:/home/${USERNAME}/.config/nvim/lua/mappings.lua:ro
+      - /home/${USERNAME}/.config/nvim/lua/options.lua:/home/${USERNAME}/.config/nvim/lua/options.lua:ro
+      - /home/${USERNAME}/.config/nvim/lua/plugins:/home/${USERNAME}/.config/nvim/lua/plugins:ro
+      - /home/${USERNAME}/.config/nvim/lua/configs:/home/${USERNAME}/.config/nvim/lua/configs:ro
+      - /home/${USERNAME}/.config/zsh/.zshrc:/home/${USERNAME}/.zshrc:ro
