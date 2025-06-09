@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     zsh \
     curl \
+    fd-find \
     ripgrep && \
     wget https://github.com/neovim/neovim/releases/download/${NVIM_VERSION}/nvim-linux-x86_64.tar.gz && \
     tar xzf nvim-linux-x86_64.tar.gz && \
