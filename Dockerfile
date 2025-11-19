@@ -16,6 +16,8 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     zsh \
     curl \
+    clangd \
+    clang-format \
     fd-find \
     ripgrep && \
     wget https://github.com/neovim/neovim/releases/download/${NVIM_VERSION}/nvim-linux-x86_64.tar.gz && \
@@ -60,7 +62,10 @@ FROM nvchad-base AS python-dev
 
 USER root
 RUN apt-get update && \
-    apt-get install -y python3 python3-pip python3-venv && \
+    apt-get install -y \
+    python3 \
+    python3-pip \
+    python3-venv && \
     rm -rf /var/lib/apt/lists/*
 
 # Ensure the app directory exists and is owned by $USERNAME
